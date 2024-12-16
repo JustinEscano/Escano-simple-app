@@ -1,6 +1,5 @@
 package com.escano_justin_c.simple_app
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        enableEdgeToEdge()  // Ensure this method is defined elsewhere or remove if unnecessary
+        enableEdgeToEdge()
 
         val firstNum = findViewById<EditText>(R.id.firstnum)
         val secondNum = findViewById<EditText>(R.id.secondnum)
@@ -28,17 +27,49 @@ class MainActivity : AppCompatActivity() {
         val resultNum = findViewById<TextView>(R.id.Resultnum)
 
         addButton.setOnClickListener {
-            val firstNumber = firstNum.text.toString().trim()
-            val secondNumber = secondNum.text.toString().trim()
+            val firstNumb = firstNum.text.toString().trim()
+            val secondNumb = secondNum.text.toString().trim()
 
-            val pfirstNumber = firstNumber.toInt()
-            val psecondNumber = secondNumber.toInt()
+            val firstNumber = firstNumb.toInt()
+            val secondNumber = secondNumb.toInt()
 
-            val sum = pfirstNumber + psecondNumber
-            resultNum.text = sum.toString()
+            val sumadd = firstNumber + secondNumber
+            resultNum.text = sumadd.toString()
         }
 
-        /* test comment ggggg*/
+        subButton.setOnClickListener {
+            val firstNumb = firstNum.text.toString().trim()
+            val secondNumb = secondNum.text.toString().trim()
+
+            val firstNumber = firstNumb.toInt()
+            val secondNumber = secondNumb.toInt()
+
+            val sumsub = firstNumber - secondNumber
+            resultNum.text = sumsub.toString()
+        }
+
+        mulButton.setOnClickListener {
+            val firstNumb = firstNum.text.toString().trim()
+            val secondNumb = secondNum.text.toString().trim()
+
+            val firstNumber = firstNumb.toInt()
+            val secondNumber = secondNumb.toInt()
+
+            val summul = firstNumber * secondNumber
+            resultNum.text = summul.toString()
+        }
+
+        divButton.setOnClickListener {
+            val firstNumb = firstNum.text.toString().trim()
+            val secondNumb = secondNum.text.toString().trim()
+
+            val firstNumber = firstNumb.toDouble()
+            val secondNumber = secondNumb.toDouble()
+
+            val sumdiv = firstNumber / secondNumber
+            resultNum.text = sumdiv.toString()
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
