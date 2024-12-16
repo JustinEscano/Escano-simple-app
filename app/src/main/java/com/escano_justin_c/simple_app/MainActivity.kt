@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             resultNum.text = sum.toString()
         }
 
-        /* test comment*/
+        /* test comment ggggg*/
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
