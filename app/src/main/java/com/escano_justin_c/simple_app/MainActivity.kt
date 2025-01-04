@@ -1,6 +1,9 @@
 package com.escano_justin_c.simple_app
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,20 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val etName = findViewById<EditText>(R.id.etName)
+        val etAge = findViewById<EditText>(R.id.etAge)
+
+        btnSubmit.setOnClickListener {
+            val name = etName.text.toString()
+            val age = etAge.text.toString()
+
+            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            intent.putExtra("name", name)
+            intent.putExtra("age", age)
+            startActivity(intent)
+        }
+
     }
 }
