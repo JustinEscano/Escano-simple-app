@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             resultNum.text = sumsub.toString()
         }
 
-        mulButton.setOnClickListener {
+        mulButton.setOnClickListener{
             val firstNumb = firstNum.text.toString().trim()
             val secondNumb = secondNum.text.toString().trim()
 
